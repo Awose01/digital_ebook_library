@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Ebook Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 py-10">
+    <div class="container mx-auto px-4">
+        <h1 class="text-4xl font-bold text-center mb-8">My Ebook Library</h1>
+
+        <!-- Section for adding a book -->
+        <section class="my-4">
+            <h2 class="text-2xl font-bold text-center mb-4">Add a Book</h2>
+            <form id="addBookForm" class="px-4">
+                <input type="text" id="addTitle" placeholder="Title" required
+                    class="mb-2 px-3 py-2 placeholder-gray-500 text-gray-900 rounded border-0 shadow focus:outline-none focus:ring w-full">
+                <input type="text" id="addAuthor" placeholder="Author" required
+                    class="mb-2 px-3 py-2 placeholder-gray-500 text-gray-900 rounded border-0 shadow focus:outline-none focus:ring w-full">
+                <input type="number" id="addPublicationYear" placeholder="Publication Year" required
+                    class="mb-2 px-3 py-2 placeholder-gray-500 text-gray-900 rounded border-0 shadow focus:outline-none focus:ring w-full">
+                <input type="text" id="addCoverImagePath" placeholder="Cover Image Path" required
+                    class="mb-2 px-3 py-2 placeholder-gray-500 text-gray-900 rounded border-0 shadow focus:outline-none focus:ring w-full">
+                <input type="text" id="addEbookLink" placeholder="Ebook Link" required
+                    class="mb-2 px-3 py-2 placeholder-gray-500 text-gray-900 rounded border-0 shadow focus:outline-none focus:ring w-full">
+                <button type="submit"
+                    class="mx-auto bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add
+                    Book</button>
+            </form>
+            <div id="addBookResponse" class="mt-4"></div>
+        </section>
+
+        <!-- Section for displaying the library -->
+        <section class="my-4">
+            <button onclick="getLibrary()"
+                class="mx-auto bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Show Updated
+                Library</button>
+            <div id="getLibraryResponse" class="mt-4 px-4"></div>
+            <div id="library" class="px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+        </section>
+
+        <!-- Section for removing a book -->
+        <section class="my-4">
+            <h2 class="text-2xl font-bold text-center mb-4">Remove a Book</h2>
+            <form id="removeBookForm" class="px-4">
+                <input type="text" id="removeTitle" placeholder="Title" required
+                    class="mb-2 px-3 py-2 placeholder-gray-500 text-gray-900 rounded border-0 shadow focus:outline-none focus:ring w-full">
+                <button type="submit"
+                    class="mx-auto bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Remove
+                    Book</button>
+            </form>
+            <div id="removeBookResponse" class="mt-4 px-4"></div>
+        </section>
+    </div>
+
+    <script src="./library.js"></script>
+</body>
+
+</html>
